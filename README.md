@@ -1,70 +1,111 @@
-# Getting Started with Create React App
+##  Get Alert
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+Installation 
 
-In the project directory, you can run:
+```bash
+npm i get-alert
+```
 
-### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## UsageExample
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```javascript
+import OkPopup from 'get-alert';
 
-### `npm test`
+function App(){
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+    return(
+        <div>
+        <OkPopup 
+        heading={'success'}
+        text={'alert text here'}
+        fun={} 
+        />
+        </div>
+    )
+}
 
-### `npm run build`
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## All Props
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+| Props  | Use |
+| ------------- | ------------- |
+| heading  |Alert Heading or Title|
+| text  | Alert message text  |
+| fun  | function to be executed on clicking ok  |
 
-### `npm run eject`
+```javascript
+import AlertPopup from 'get-alert';
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+function App(){
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+    return(
+        <div>
+        <AlertPopup 
+        heading={'success'}
+        text={'alert text here'}
+        btn_text={'Ok'}
+        fun={} 
+        cancel={} 
+        />
+        </div>
+    )
+}
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+## All Props
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+| Props  | Use |
+| ------------- | ------------- |
+| heading  |Alert Heading or Title|
+| text  | Alert message text  |
+| btn_text  | text to be appear on the button|
+| fun  | function to be executed on clicking ok  |
+| cancel  | function to be executed on clicking cancel  |
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## One Example for Usage
+```javascript
+import {useState} from 'react';
+import AlertPopup from 'get-alert';
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+function App(){
 
-### Code Splitting
+    const [showAlert, set_ShowAlert] = useState(false);
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+    const ShowAlertPopup=()=>{
+    set_ShowAlert(true);
+    }
 
-### Analyzing the Bundle Size
+    return(
+        <div>
+        <button onClick={ShowAlertPopup()}>Show Alert </button>
+        {showAlert?
+        <AlertPopup 
+        heading={'success'}
+        text={'alert text here'}
+        btn_text={'Ok'}
+        fun={} 
+        cancel={} 
+        />
+        :null}
+        </div>
+    )
+}
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```
 
-### Making a Progressive Web App
+Same Example for both the popups.
+Basically I have used conditional rendering here, as you can see there is a variable 'showAlert' if it becomes true then Alert will appear on the screen. But by default popup will not be appear at the center of the screen you have to style according to your use.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Author
 
-### Advanced Configuration
+- [@Kshirsagar-Govind](https://github.com/Kshirsagar-Govind)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+-------------------
+ THANK YOU
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

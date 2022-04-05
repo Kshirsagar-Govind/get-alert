@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.just-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.alert-popup-class {
+  background-color: #fff;
+  width: 60%;
+  height: fit-content;
+  box-shadow: 0 10px 10px 5px rgba (0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 30px;
+  animation: alert_anim 0.2s linear;
+}
+
+@keyframes alert_anim {
+  0% {
+    transform: scale(0);
+  }
+  80% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+h1,
+h3 {
+  font-family: "Montserrat", Verdana, sans-serif;
+  margin: 10px 0;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+.buttons_2 {
+  display: flex;
+  justify-content: center;
+}
+.cancel_btn {
+  background-color: rgb(116, 160, 255);
+  border: 2px solid transparent;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  font-weight: 500;
+  color: #fff;
+  transition: 0.1s;
+  background-color: #fff;
+  color: rgb(116, 160, 255);
+  border: 2px solid rgb(116, 160, 255);
+}
+.ok_btn {
+  background-color: rgb(116, 160, 255);
+  border: 2px solid transparent;
+  width: 100px;
+  height: 40px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+  font-weight: 600;
+  color: #fff;
+  transition: 0.1s;
+  margin: 0 10px;
+}
+
+.ok_btn:hover {
+  background-color: #fff;
+  color: rgb(116, 160, 255);
+  border: 2px solid rgb(116, 160, 255);
+}
+
+.buttons_2 {
+  /* border: 2px solid; */
+  float: right;
+}
